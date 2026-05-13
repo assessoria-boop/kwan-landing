@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kwan Clínica Veterinária – Atendimento 24h em Foz do Iguaçu</title>
+  <meta name="description" content="Clínica Veterinária em Foz do Iguaçu com atendimento 24 horas. Equipe qualificada e atendimento humanizado. 5.0 no Google." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --roxo: #6B3FA0;
+      --roxo-escuro: #5a2d87;
+      --roxo-suave: #f7f3fc;
+      --verde: #22C55E;
+      --verde-hover: #16a34a;
+      --texto: #111;
+      --cinza: #6b7280;
+      --cinza-claro: #f4f4f5;
+      --borda: #e5e7eb;
+      --branco: #fff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--texto);
+      background: var(--branco);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOPO ── */
+    .topo {
+      background: var(--roxo);
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      padding: 9px 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .topo-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid var(--borda);
+      background: var(--branco);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--roxo);
+      background: var(--roxo-suave);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--verde);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: var(--verde-hover); transform: translateY(-1px); }
+    .nav-btn svg { width: 16px; height: 16px; fill: white; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 120px 48px 120px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--roxo);
+      background: var(--roxo-suave);
+      border-radius: 999px;
+      padding: 5px 12px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--texto);
+      margin-bottom: 40px;
+    }
+
+    .hero h1 span { color: var(--roxo); }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--cinza);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-principal {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--verde);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(34,197,94,0.35);
+    }
+    .btn-principal:hover { background: var(--verde-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,0.4); }
+    .btn-principal svg { width: 18px; height: 18px; fill: white; }
+
+    .hero-localizacao {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cinza-claro);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 14px;
+      color: var(--cinza);
+      margin-bottom: 48px;
+    }
+    .hero-localizacao strong { color: var(--roxo); }
+
+    .hero-nota { font-size: 13px; color: var(--cinza); }
+    .hero-nota strong { color: var(--texto); }
+
+    .hero-foto { position: relative; }
+
+    .hero-foto img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+
+    .hero-foto-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      border-radius: 16px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .badge-icon { font-size: 24px; }
+    .badge-text-top { font-size: 13px; font-weight: 700; color: var(--texto); }
+    .badge-text-bot { font-size: 11px; color: var(--cinza); }
+
+    /* ── STATS ── */
+    .stats {
+      border-top: 1px solid var(--borda);
+      border-bottom: 1px solid var(--borda);
+      padding: 28px 48px;
+    }
+
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 900; color: var(--roxo); letter-spacing: -1px; }
+    .stat-label { font-size: 12px; color: var(--cinza); margin-top: 2px; font-weight: 500; }
+
+    /* ── SEÇÕES ── */
+    .sec {
+      padding: 88px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .sec-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--roxo);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .sec-titulo {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .sec-titulo span { color: var(--roxo); }
+
+    .sec-sub {
+      font-size: 16px;
+      color: var(--cinza);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    /* ── SERVIÇOS ── */
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .servico-card {
+      background: var(--cinza-claro);
+      border-radius: 20px;
+      padding: 28px 22px;
+      transition: all 0.2s;
+    }
+
+    .servico-card:hover { background: var(--roxo-suave); transform: translateY(-3px); }
+
+    .servico-emoji { font-size: 32px; margin-bottom: 14px; display: block; }
+
+    .servico-card h3 { font-size: 15px; font-weight: 700; line-height: 1.4; }
+
+    /* ── GALERIA ── */
+    .galeria {
+      background: var(--cinza-claro);
+      padding: 88px 48px;
+    }
+
+    .galeria-inner { max-width: 1100px; margin: 0 auto; }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 48px;
+      height: 280px;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* ── POR QUE ── */
+    .sec-porque {
+      padding: 88px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .motivos { display: flex; flex-direction: column; gap: 8px; }
+
+    .motivo {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .motivo:hover { background: var(--roxo-suave); border-color: #e9d5ff; }
+
+    .motivo-num {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--roxo);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .motivo h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .motivo p { font-size: 13px; color: var(--cinza); line-height: 1.5; }
+
+    /* ── DEPOIMENTOS ── */
+    .sec-depoi {
+      background: var(--roxo);
+      padding: 88px 48px;
+      color: white;
+    }
+
+    .sec-depoi-inner { max-width: 1100px; margin: 0 auto; }
+    .sec-depoi .sec-tag { color: rgba(255,255,255,0.6); }
+    .sec-depoi .sec-titulo { color: white; }
+
+    .depoi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .depoi-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .depoi-estrelas { color: #fbbf24; font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
+    .depoi-card p { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 20px; }
+
+    .depoi-autor { display: flex; align-items: center; gap: 10px; }
+
+    .depoi-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .depoi-nome { font-size: 13px; font-weight: 700; }
+    .depoi-sub { font-size: 11px; color: rgba(255,255,255,0.5); }
+
+    /* ── CTA ── */
+    .sec-cta {
+      padding: 88px 48px;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .sec-cta h2 {
+      font-size: 40px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .sec-cta h2 span { color: var(--roxo); }
+    .sec-cta p { font-size: 16px; color: var(--cinza); margin-bottom: 36px; line-height: 1.6; }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--verde);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(34,197,94,0.4);
+      transition: all 0.2s;
+    }
+    .btn-whatsapp:hover { background: var(--verde-hover); transform: translateY(-2px); }
+    .btn-whatsapp svg { width: 22px; height: 22px; fill: white; }
+
+    /* ── LOCALIZAÇÃO ── */
+    .sec-local { background: var(--cinza-claro); padding: 88px 48px; }
+
+    .sec-local-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border: 1px solid var(--borda);
+    }
+
+    .info-linha { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--cinza); line-height: 1.5; }
+    .info-linha .ico { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .info-linha strong { color: var(--texto); display: block; }
+
+    .mapa { border-radius: 24px; overflow: hidden; height: 340px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .mapa iframe { width: 100%; height: 100%; border: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--borda);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-texto { font-size: 13px; color: var(--cinza); }
+    .footer-texto strong { color: var(--texto); }
+
+    /* ── BOTÃO FLUTUANTE ── */
+    .wpp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 58px; height: 58px;
+      background: var(--verde);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(34,197,94,0.45);
+      text-decoration: none;
+      z-index: 999;
+      transition: all 0.2s;
+    }
+    .wpp-float:hover { transform: scale(1.1); }
+    .wpp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .hero, .sec-porque, .sec-local-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 48px 24px; }
+      .hero h1 { font-size: 38px; }
+      .sec { padding: 56px 24px; }
+      .galeria { padding: 56px 24px; }
+      .servicos-grid { grid-template-columns: 1fr 1fr; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; height: auto; }
+      .galeria-grid img { height: 180px; }
+      .depoi-grid { grid-template-columns: 1fr; }
+      .sec-depoi { padding: 56px 24px; }
+      .sec-cta { padding: 56px 24px; }
+      .sec-local { padding: 56px 24px; }
+      footer { padding: 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <div class="topo">
+    <span class="topo-dot"></span>
+    Atendimento disponível agora — Plantão 24 horas, todos os dias
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span style="font-size:22px;font-weight:900;color:#6B3FA0;letter-spacing:-0.5px;">KWAN</span>
+      <span class="nav-badge">Clínica Veterinária</span>
+    </a>
+    <a href="https://wa.me/554599999999" class="nav-btn">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar agora
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div style="background: var(--branco);">
+    <div class="hero">
+      <h1>Kwan <span>Clínica Veterinária</span> 24h</h1>
+      <div class="hero-localizacao">
+        📍 Localização privilegiada em <strong>Foz do Iguaçu</strong>
+      </div>
+      <div class="hero-btns">
+        <a href="https://wa.me/554599999999" class="btn-principal">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Atendimento imediato
+        </a>
+        <span class="hero-nota">Resposta em <strong>minutos</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Plantão todos os dias</div></div>
+      <div class="stat"><div class="stat-num">5.0 ⭐</div><div class="stat-label">Nota no Google</div></div>
+      <div class="stat"><div class="stat-num">+500</div><div class="stat-label">Pets atendidos</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Atendimento humanizado</div></div>
+    </div>
+  </div>
+
+  <!-- SERVIÇOS -->
+  <div class="sec">
+    <span class="sec-tag">O que fazemos</span>
+    <h2 class="sec-titulo">Estrutura completa para <span>cuidar do seu pet</span></h2>
+    <p class="sec-sub">Da consulta de rotina à emergência — temos tudo que seu companheiro precisa em um só lugar.</p>
+    <div class="servicos-grid">
+      <div class="servico-card"><span class="servico-emoji">🩺</span><h3>Consultas com veterinários experientes</h3></div>
+      <div class="servico-card"><span class="servico-emoji">🔬</span><h3>Cirurgias e internação segura</h3></div>
+      <div class="servico-card"><span class="servico-emoji">📋</span><h3>Exames e diagnósticos no local</h3></div>
+      <div class="servico-card"><span class="servico-emoji">🏥</span><h3>Estrutura completa 24 horas</h3></div>
+    </div>
+  </div>
+
+  <!-- GALERIA -->
+  <div class="galeria">
+    <div class="galeria-inner">
+      <span class="sec-tag">Nossa clínica</span>
+      <h2 class="sec-titulo">Um espaço pensado <span>para eles</span></h2>
+      <div class="galeria-grid">
+        <img src="unnamed (1).webp" alt="Recepção Kwan" />
+        <img src="unnamed.webp" alt="Fachada Kwan" />
+        <img src="unnamed (2).webp" alt="Estrutura Kwan" style="object-position:top;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUE -->
+  <div style="background: var(--branco);">
+    <div class="sec-porque">
+      <div>
+        <span class="sec-tag">Por que a Kwan?</span>
+        <h2 class="sec-titulo" style="font-size:32px;">Transparência que acolhe.<br /><span>Respeito que cuida.</span></h2>
+        <p class="sec-sub" style="margin-bottom:0;">Muito além de uma clínica — somos parceiros na saúde e bem-estar do seu pet.</p>
+      </div>
+      <div class="motivos">
+        <div class="motivo">
+          <div class="motivo-num">01</div>
+          <div><h4>5.0 no Google</h4><p>Avaliação máxima com centenas de tutores satisfeitos em Foz do Iguaçu.</p></div>
+        </div>
+        <div class="motivo">
+          <div class="motivo-num">02</div>
+          <div><h4>Atendimento humanizado</h4><p>Seu pet tratado com respeito, paciência e dedicação real — como se fosse nosso.</p></div>
+        </div>
+        <div class="motivo">
+          <div class="motivo-num">03</div>
+          <div><h4>Plantão 24h todos os dias</h4><p>Emergência não avisa hora. Estamos prontos quando você mais precisar.</p></div>
+        </div>
+        <div class="motivo">
+          <div class="motivo-num">04</div>
+          <div><h4>Equipe especializada</h4><p>Veterinários experientes com estrutura completa para qualquer caso.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <div class="sec-depoi">
+    <div class="sec-depoi-inner">
+      <span class="sec-tag">Avaliações</span>
+      <h2 class="sec-titulo">O que dizem os tutores</h2>
+      <div class="depoi-grid">
+        <div class="depoi-card">
+          <div class="depoi-estrelas">★★★★★</div>
+          <p>"Atendimento incrível! Levei minha cadela às 2h da manhã em uma emergência e fui atendida com muita atenção e cuidado. Equipe nota 10!"</p>
+          <div class="depoi-autor">
+            <div class="depoi-avatar">A</div>
+            <div><div class="depoi-nome">Ana Paula S.</div><div class="depoi-sub">Google · Foz do Iguaçu</div></div>
+          </div>
+        </div>
+        <div class="depoi-card">
+          <div class="depoi-estrelas">★★★★★</div>
+          <p>"Meu gato precisou de cirurgia e a Kwan foi impecável. Ambiente limpo, médicos atenciosos e resultado ótimo. Super recomendo!"</p>
+          <div class="depoi-autor">
+            <div class="depoi-avatar">R</div>
+            <div><div class="depoi-nome">Ricardo M.</div><div class="depoi-sub">Google · Foz do Iguaçu</div></div>
+          </div>
+        </div>
+        <div class="depoi-card">
+          <div class="depoi-estrelas">★★★★★</div>
+          <p>"A melhor clínica veterinária de Foz. Atendimento humanizado de verdade. Meu pet sempre fica em boas mãos aqui. Nota máxima!"</p>
+          <div class="depoi-autor">
+            <div class="depoi-avatar">C</div>
+            <div><div class="depoi-nome">Carla F.</div><div class="depoi-sub">Google · Foz do Iguaçu</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="sec-cta">
+    <h2>A saúde do seu pet <span>não pode esperar.</span></h2>
+    <p>Entre em contato agora e receba atendimento imediato da nossa equipe.</p>
+    <a href="https://wa.me/554599999999" class="btn-whatsapp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar no WhatsApp agora
+    </a>
+  </div>
+
+  <!-- LOCALIZAÇÃO -->
+  <div class="sec-local">
+    <div class="sec-local-inner">
+      <div>
+        <span class="sec-tag">Onde estamos</span>
+        <h2 class="sec-titulo" style="font-size:32px;">Localização <span>estratégica</span><br />em Foz do Iguaçu</h2>
+        <div class="info-box">
+          <div class="info-linha">
+            <span class="ico">📍</span>
+            <div><strong>Endereço</strong>Av. Juscelino Kubitscheck, 3500 – Vila Pérola<br />Foz do Iguaçu – PR · CEP 85865-000</div>
+          </div>
+          <div class="info-linha">
+            <span class="ico">🕐</span>
+            <div><strong>Horário</strong>24 horas · 7 dias por semana</div>
+          </div>
+          <div class="info-linha">
+            <span class="ico">💬</span>
+            <div><strong>WhatsApp</strong>Resposta em minutos</div>
+          </div>
+        </div>
+        <a href="https://wa.me/554599999999" class="btn-principal" style="margin-top:24px;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar agora
+        </a>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.5!2d-54.585!3d-25.535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDMyJzA2LjAiUyA1NMKwMzUnMDYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span style="font-size:20px;font-weight:900;color:#6B3FA0;letter-spacing:-0.5px;">KWAN</span>
+    <div class="footer-texto">
+      <strong>Kwan Clínica Veterinária</strong> · Av. Juscelino Kubitscheck, 3500 – Foz do Iguaçu – PR<br />
+      Cuidado que você confia. Sempre que precisar.
+    </div>
+    <a href="https://wa.me/554599999999" class="nav-btn">Falar no WhatsApp</a>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE -->
+  <a href="https://wa.me/554599999999" class="wpp-float" title="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+</body>
+</html>
